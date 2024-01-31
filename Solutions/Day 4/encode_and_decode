@@ -1,0 +1,25 @@
+class Codec:
+    def encode(self, strs: List[str]) -> str:
+        """Encodes a list of strings to a single string.
+        """
+        encoded_s=""
+        for s in strs:
+            encoded_s+=str(len(s))+"#"+s
+        return encoded_s
+
+    def decode(self, s: str) -> List[str]:
+        l=0
+        ans = []
+        while l<len(s):
+            r=l
+            while s[r]!='#':
+                r+=1
+            len1 = int(s[l:r])
+            ans.append(s[r+1:r+len1+1])
+            l=r+len1+1    
+        return ans        
+            
+
+                
+
+  
