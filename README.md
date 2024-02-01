@@ -14,4 +14,5 @@ Welcome to the "Daily LeetCode DSA Challenge" repository! 🚀
 | Product of Array Except Self | [Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/description/)   | [Python](https://github.com/IamAniket12/Leetcode_daily/blob/main/Solutions/Day%203/product_of_arrya_except_itself.py)   | Day 3 | Array & Hashing |
 | Valid Sudoku| [Valid Sudoku](https://leetcode.com/problems/valid-sudoku/)   | [Python](https://github.com/IamAniket12/Leetcode_daily/blob/main/Solutions/Day%204/valid_sudoku.py)   | Day 4 | Array & Hashing |
 | Encode and Decode Strings | [Encode and Decode Strings](https://leetcode.com/problems/encode-and-decode-strings/description/)   | [Python](https://github.com/IamAniket12/Leetcode_daily/blob/main/Solutions/Day%204/encode_and_decode)   | Day 4 | Array & Hashing |
-
+| Longest Consecutive Sequence | [Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/description/)   | [Python](https://github.com/IamAniket12/Leetcode_daily/blob/main/Solutions/Day%205/Longest%20Consecutive%20Sequence.py)   | Day 5 | Array & Hashing |
+| Valid Palindrome | [Valid Palindrome](https://leetcode.com/problems/valid-palindrome/)   | [Python](https://github.com/IamAniket12/Leetcode_daily/blob/main/Solutions/Day%205/Valid%20Palindrome.py)   | Day 5 | Two Pointers |
