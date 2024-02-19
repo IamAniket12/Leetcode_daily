@@ -1,0 +1,236 @@
+[
+    {
+        "label": "math",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "math",
+        "description": "math",
+        "detail": "math",
+        "documentation": {}
+    },
+    {
+        "label": "pandas",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pandas",
+        "description": "pandas",
+        "detail": "pandas",
+        "documentation": {}
+    },
+    {
+        "label": "numpy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "numpy",
+        "description": "numpy",
+        "detail": "numpy",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "Solutions.Day 1.contains_duplicate",
+        "description": "Solutions.Day 1.contains_duplicate",
+        "peekOfCode": "class Solution:\n    def containsDuplicate(self, nums: List[int]) -> bool:\n        d1={}\n        for n in nums:\n            if n in d1:\n                return True\n            else:\n                d1[n]=1\n        return False",
+        "detail": "Solutions.Day 1.contains_duplicate",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "Solutions.Day 1.valid_anagram",
+        "description": "Solutions.Day 1.valid_anagram",
+        "peekOfCode": "class Solution:\n    def isAnagram(self, s: str, t: str) -> bool:\n        s1 = [0]*26\n        s2 = [0]*26\n        for c in s:\n            s1[ord(c)-97]+=1\n        for c in t:\n            s2[ord(c)-97]+=1\n        return s1==s2",
+        "detail": "Solutions.Day 1.valid_anagram",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "Solutions.Day 10.Car Fleet",
+        "description": "Solutions.Day 10.Car Fleet",
+        "peekOfCode": "class Solution:\n    def carFleet(self, target: int, position: List[int], speed: List[int]) -> int:\n        stack = []\n        pair = [[p,s] for p,s in zip(position,speed)]\n        for p,s in sorted(pair)[::-1]:\n            stack.append((target-p)/s)\n            if len(stack)>=2 and stack[-1]<=stack[-2]:\n                stack.pop()\n        return len(stack)",
+        "detail": "Solutions.Day 10.Car Fleet",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "Solutions.Day 10.Daily Temperatures",
+        "description": "Solutions.Day 10.Daily Temperatures",
+        "peekOfCode": "class Solution:\n    def dailyTemperatures(self, temperatures: List[int]) -> List[int]:\n        stack=[]\n        ans = [0]*len(temperatures)\n        for i in range(len(temperatures)):\n                while stack and temperatures[i]>stack[-1][0]: \n                    ans [stack[-1][1] ] = i-stack[-1][1]\n                    stack.pop() \n                stack.append([temperatures[i],i])   \n        return ans",
+        "detail": "Solutions.Day 10.Daily Temperatures",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "Solutions.Day 11.Binary Search",
+        "description": "Solutions.Day 11.Binary Search",
+        "peekOfCode": "class Solution:\n    def search(self, nums: List[int], target: int) -> int:\n        left=0\n        right=len(nums)-1\n        while left<=right:\n            mid = (left+right)//2\n            if nums[mid]==target:\n                return mid\n            elif nums[mid]<target:\n                left=mid+1",
+        "detail": "Solutions.Day 11.Binary Search",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "Solutions.Day 11.Largest Rectangle In Histogram",
+        "description": "Solutions.Day 11.Largest Rectangle In Histogram",
+        "peekOfCode": "class Solution:\n    def largestRectangleArea(self, heights: List[int]) -> int:\n        maxarea=0\n        stack=[]\n        for i,h in enumerate(heights):\n            start=i\n            while stack and stack[-1][1]>h:\n                index,height = stack.pop()\n                maxarea = max(maxarea,(height* (i-index)))\n                start=index",
+        "detail": "Solutions.Day 11.Largest Rectangle In Histogram",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "Solutions.Day 12.Koko Eating Bananas",
+        "description": "Solutions.Day 12.Koko Eating Bananas",
+        "peekOfCode": "class Solution:\n    def minEatingSpeed(self, piles: List[int], h: int) -> int:\n        left=1\n        right = max(piles)\n        ans = float(\"inf\")\n        while left<=right:\n            mid = (left+right)//2\n            temp = 0\n            for p in piles:\n                temp+=math.ceil(p/mid)",
+        "detail": "Solutions.Day 12.Koko Eating Bananas",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "Solutions.Day 12.Search a 2D Matrix",
+        "description": "Solutions.Day 12.Search a 2D Matrix",
+        "peekOfCode": "class Solution:\n    def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:\n        top,bottom = 0,len(matrix)-1\n        row=-1\n        while top<=bottom:\n            mid = (top+bottom)//2\n            print(mid)\n            if matrix[mid][0]<=target and matrix[mid][-1]>=target:\n                row=mid\n                break",
+        "detail": "Solutions.Day 12.Search a 2D Matrix",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "Solutions.Day 2.group_anagrams",
+        "description": "Solutions.Day 2.group_anagrams",
+        "peekOfCode": "class Solution:\n    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:\n        d1 = defaultdict(list)\n        for s in strs:\n            l1 = [0]*26\n            for c in s:\n                l1[ord(c)-97]+=1\n            d1[tuple(l1)].append(s)\n        return d1.values()",
+        "detail": "Solutions.Day 2.group_anagrams",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "Solutions.Day 2.two_sum",
+        "description": "Solutions.Day 2.two_sum",
+        "peekOfCode": "class Solution:\n    def twoSum(self, nums: List[int], target: int) -> List[int]:\n        d1={}\n        for i in range(len(nums)):\n            if target - nums[i] in d1:\n                return [d1[target-nums[i]],i]\n            else:\n                d1[nums[i]]=i",
+        "detail": "Solutions.Day 2.two_sum",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "Solutions.Day 3.product_of_arrya_except_itself",
+        "description": "Solutions.Day 3.product_of_arrya_except_itself",
+        "peekOfCode": "class Solution:\n    def productExceptSelf(self, nums: List[int]) -> List[int]:\n        leftm = [1]*len(nums)\n        rightm = [1]*len(nums)\n        leftm[0]=nums[0]\n        rightm[-1]=nums[-1]\n        ans = [0]*len(nums)\n        mul = 1\n        for i in range(1,len(nums)):\n            leftm[i] = leftm[i-1]*nums[i]",
+        "detail": "Solutions.Day 3.product_of_arrya_except_itself",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "Solutions.Day 3.top_k_frequent",
+        "description": "Solutions.Day 3.top_k_frequent",
+        "peekOfCode": "class Solution:\n    def topKFrequent(self, nums: List[int], k: int) -> List[int]:\n        d1={}\n        for n in nums:\n            if n in d1:\n                d1[n]+=1\n            else:\n                d1[n]=1\n        sorted_d1 = sorted(d1.items(),key=lambda x: -x[1])\n        ans = []",
+        "detail": "Solutions.Day 3.top_k_frequent",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "Solutions.Day 4.valid_sudoku",
+        "description": "Solutions.Day 4.valid_sudoku",
+        "peekOfCode": "class Solution:\n    def isValidSudoku(self, board: List[List[str]]) -> bool:\n       dr = defaultdict(list)\n       dc = defaultdict(list)\n       drc = defaultdict(list)\n       for r in range(len(board)):\n           for c in range(len(board[0])):\n                if board[r][c] in dr[r] or board[r][c] in dc[c] or board[r][c] in drc[(r//3,c//3)]:\n                   return False\n                elif board[r][c]==\".\":",
+        "detail": "Solutions.Day 4.valid_sudoku",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "Solutions.Day 5.Longest Consecutive Sequence",
+        "description": "Solutions.Day 5.Longest Consecutive Sequence",
+        "peekOfCode": "class Solution:\n    def longestConsecutive(self, nums: List[int]) -> int:\n        longest=0\n        set_nums=set(nums)\n        for n in nums:\n            #it can be starting of the nums\n            if (n-1) not in set_nums:\n                length=0\n                while n+length in set_nums:\n                    length+=1",
+        "detail": "Solutions.Day 5.Longest Consecutive Sequence",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "Solutions.Day 5.Valid Palindrome",
+        "description": "Solutions.Day 5.Valid Palindrome",
+        "peekOfCode": "class Solution:\n    def isPalindrome(self, s: str) -> bool:\n        text=\"\"\n        for c in s:           \n            if c.isalnum():\n                c = c.lower()\n                text+=c\n        l=0\n        r=len(text)-1\n        while l<r:",
+        "detail": "Solutions.Day 5.Valid Palindrome",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "Solutions.Day 6.3Sum",
+        "description": "Solutions.Day 6.3Sum",
+        "peekOfCode": "class Solution:\n    def threeSum(self, nums: List[int]) -> List[List[int]]:\n        nums = sorted(nums)\n        ans=[]\n        target=0\n        i=0\n        while i < len(nums): \n            first = nums[i]\n            left = i+1\n            right=len(nums)-1",
+        "detail": "Solutions.Day 6.3Sum",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "Solutions.Day 6.Two Sum II Input Array Is Sorted",
+        "description": "Solutions.Day 6.Two Sum II Input Array Is Sorted",
+        "peekOfCode": "class Solution:\n    def twoSum(self, numbers: List[int], target: int) -> List[int]:\n        l=0\n        r = len(numbers)-1\n        while l<r:\n            if numbers[l]+numbers[r]==target:\n                return [l+1,r+1]\n            elif numbers[l]+numbers[r]<target:\n                l+=1\n            else:",
+        "detail": "Solutions.Day 6.Two Sum II Input Array Is Sorted",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "Solutions.Day 7.Container With Most Water",
+        "description": "Solutions.Day 7.Container With Most Water",
+        "peekOfCode": "class Solution:\n    def maxArea(self, height: List[int]) -> int:\n        left=0\n        right=len(height)-1\n        ans=0\n        while left<right:\n            temp = min(height[left],height[right]) * (right-left)\n            ans = max(ans,temp)\n            if height[left]<height[right]:\n                left+=1",
+        "detail": "Solutions.Day 7.Container With Most Water",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "Solutions.Day 7.Trapping Rain Water",
+        "description": "Solutions.Day 7.Trapping Rain Water",
+        "peekOfCode": "class Solution:\n    def trap(self, height: List[int]) -> int:\n        maxL = height[0]\n        maxR = height[-1]\n        total=0\n        l,r=0,len(height)-1\n        while l<r:\n            if maxL<maxR:\n                total += max(maxL-height[l],0)\n                l+=1",
+        "detail": "Solutions.Day 7.Trapping Rain Water",
+        "documentation": {}
+    },
+    {
+        "label": "MinStack",
+        "kind": 6,
+        "importPath": "Solutions.Day 8.Min Stack",
+        "description": "Solutions.Day 8.Min Stack",
+        "peekOfCode": "class MinStack:\n    def __init__(self):\n        self.stack=[]\n        self.minstack=[]\n    def push(self, val: int) -> None:\n        self.stack.append(val)\n        if not self.minstack:\n            self.minstack.append(val)\n        elif self.minstack[-1]>val:\n            self.minstack.append(val)",
+        "detail": "Solutions.Day 8.Min Stack",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "Solutions.Day 8.Valid Parentheses",
+        "description": "Solutions.Day 8.Valid Parentheses",
+        "peekOfCode": "class Solution:\n    def isValid(self, s: str) -> bool:\n        d1 = {')':'(','}':'{',']':'['}\n        stack=[]\n        for c in s:\n            if c=='(' or c=='{' or c=='[':\n                stack.append(c)\n            else:\n                if stack:\n                    temp=stack.pop()",
+        "detail": "Solutions.Day 8.Valid Parentheses",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "Solutions.Day 9.Evaluate Reverse Polish Notation",
+        "description": "Solutions.Day 9.Evaluate Reverse Polish Notation",
+        "peekOfCode": "class Solution:\n    def evalRPN(self, tokens: List[str]) -> int:\n        stack=[]\n        op = ['+','-','*','/']\n        for t in tokens:\n            print(stack)\n            if t in op:\n                temp1 = stack.pop()\n                temp2 =stack.pop()\n                if t=='+':",
+        "detail": "Solutions.Day 9.Evaluate Reverse Polish Notation",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "Solutions.Day 9.Generate Parentheses",
+        "description": "Solutions.Day 9.Generate Parentheses",
+        "peekOfCode": "class Solution:\n    def generateParenthesis(self, n: int) -> List[str]:\n        def dfs(openc,closec):\n            if openc==closec==n:\n                ans.append(\"\".join(stack))\n            if openc<n:\n                stack.append(\"(\")\n                dfs(openc+1,closec)\n                stack.pop()\n            if closec<openc:",
+        "detail": "Solutions.Day 9.Generate Parentheses",
+        "documentation": {}
+    }
+]
