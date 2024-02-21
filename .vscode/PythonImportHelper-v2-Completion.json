@@ -101,6 +101,24 @@
     {
         "label": "Solution",
         "kind": 6,
+        "importPath": "Solutions.Day 13.Find Minimum in Rotated Sorted Array",
+        "description": "Solutions.Day 13.Find Minimum in Rotated Sorted Array",
+        "peekOfCode": "class Solution:\n    def findMin(self, nums: List[int]) -> int:\n        if len(nums)==1:\n            return nums[0]\n        if nums[-1]>nums[0]:\n            return nums[0]\n        left=0\n        right = len(nums)-1\n        while left<=right:\n            mid = (left+right)//2",
+        "detail": "Solutions.Day 13.Find Minimum in Rotated Sorted Array",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "Solutions.Day 13.Search In Rotated Sorted Array",
+        "description": "Solutions.Day 13.Search In Rotated Sorted Array",
+        "peekOfCode": "class Solution:\n    def search(self, nums: List[int], target: int) -> int:\n        left,right = 0, len(nums)-1\n        while left<=right:\n            mid = (left+right)//2\n            if nums[mid]==target:\n                return mid\n            ##Left portion is sorted\n            if nums[left]<=nums[mid]:\n                if target>nums[mid] or target< nums[left]:",
+        "detail": "Solutions.Day 13.Search In Rotated Sorted Array",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
         "importPath": "Solutions.Day 2.group_anagrams",
         "description": "Solutions.Day 2.group_anagrams",
         "peekOfCode": "class Solution:\n    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:\n        d1 = defaultdict(list)\n        for s in strs:\n            l1 = [0]*26\n            for c in s:\n                l1[ord(c)-97]+=1\n            d1[tuple(l1)].append(s)\n        return d1.values()",
