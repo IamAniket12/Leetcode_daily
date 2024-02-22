@@ -119,6 +119,24 @@
     {
         "label": "Solution",
         "kind": 6,
+        "importPath": "Solutions.Day 14.Median of Two Sorted Arrays",
+        "description": "Solutions.Day 14.Median of Two Sorted Arrays",
+        "peekOfCode": "class Solution:\n    def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:\n        A,B=nums1,nums2\n        total = len(nums1)+len(nums2)\n        half = total//2\n        if len(B)<len(A):\n            B,A=A,B\n        l,r = 0,len(A)-1\n        while True:\n            mid1 = (l+r)//2",
+        "detail": "Solutions.Day 14.Median of Two Sorted Arrays",
+        "documentation": {}
+    },
+    {
+        "label": "TimeMap",
+        "kind": 6,
+        "importPath": "Solutions.Day 14.Time Based Key Value Store",
+        "description": "Solutions.Day 14.Time Based Key Value Store",
+        "peekOfCode": "class TimeMap:\n    def __init__(self):\n        self.store={}\n    def set(self, key: str, value: str, timestamp: int) -> None:\n        if key not in self.store:\n            self.store[key]=[]\n        self.store[key].append([value,timestamp])    \n    def get(self, key: str, timestamp: int) -> str:\n        res=\"\"\n        values = self.store.get(key,[])",
+        "detail": "Solutions.Day 14.Time Based Key Value Store",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
         "importPath": "Solutions.Day 2.group_anagrams",
         "description": "Solutions.Day 2.group_anagrams",
         "peekOfCode": "class Solution:\n    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:\n        d1 = defaultdict(list)\n        for s in strs:\n            l1 = [0]*26\n            for c in s:\n                l1[ord(c)-97]+=1\n            d1[tuple(l1)].append(s)\n        return d1.values()",
