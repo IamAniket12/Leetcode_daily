@@ -137,6 +137,24 @@
     {
         "label": "Solution",
         "kind": 6,
+        "importPath": "Solutions.Day 15.Best Time to Buy And Sell Stock",
+        "description": "Solutions.Day 15.Best Time to Buy And Sell Stock",
+        "peekOfCode": "class Solution:\n    def maxProfit(self, prices: List[int]) -> int:\n        cur_min = float(\"inf\")\n        profit=0\n        for p in prices:\n            profit = max(profit, p-cur_min)\n            cur_min = min(p,cur_min)\n        return profit",
+        "detail": "Solutions.Day 15.Best Time to Buy And Sell Stock",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "Solutions.Day 15.Longest Substring Without Repeating Characters",
+        "description": "Solutions.Day 15.Longest Substring Without Repeating Characters",
+        "peekOfCode": "class Solution:\n    def lengthOfLongestSubstring(self, s: str) -> int:\n        l=0\n        r=0\n        ans = 0\n        stock=[]\n        while l<=r and r<len(s):\n            if s[r] in stock:\n                while s[r] in stock:\n                    stock.remove(s[l])",
+        "detail": "Solutions.Day 15.Longest Substring Without Repeating Characters",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
         "importPath": "Solutions.Day 2.group_anagrams",
         "description": "Solutions.Day 2.group_anagrams",
         "peekOfCode": "class Solution:\n    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:\n        d1 = defaultdict(list)\n        for s in strs:\n            l1 = [0]*26\n            for c in s:\n                l1[ord(c)-97]+=1\n            d1[tuple(l1)].append(s)\n        return d1.values()",
