@@ -155,6 +155,24 @@
     {
         "label": "Solution",
         "kind": 6,
+        "importPath": "Solutions.Day 16.Longest Substring Without Repeating Characters",
+        "description": "Solutions.Day 16.Longest Substring Without Repeating Characters",
+        "peekOfCode": "class Solution:\n    def characterReplacement(self, s: str, k: int) -> int:\n        count={}\n        res=0\n        l=0\n        for r in range(len(s)):\n            count[s[r]] = 1+count.get(s[r],0)\n            while (r-l+1) - max(count.values())>k:\n                count[s[l]]-=1\n                l+=1",
+        "detail": "Solutions.Day 16.Longest Substring Without Repeating Characters",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "Solutions.Day 16.Permutation In String",
+        "description": "Solutions.Day 16.Permutation In String",
+        "peekOfCode": "class Solution:\n    def checkInclusion(self, s1: str, s2: str) -> bool:\n        if len(s1)>len(s2):return False\n        d1= [0]*26\n        d2 = [0]*26\n        for i in range(len(s1)):\n            d1[ord(s1[i])-ord('a')]+=1\n            d2[ord(s2[i])- ord('a')]+=1\n        if s1==s2:return True\n        matches=0",
+        "detail": "Solutions.Day 16.Permutation In String",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
         "importPath": "Solutions.Day 2.group_anagrams",
         "description": "Solutions.Day 2.group_anagrams",
         "peekOfCode": "class Solution:\n    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:\n        d1 = defaultdict(list)\n        for s in strs:\n            l1 = [0]*26\n            for c in s:\n                l1[ord(c)-97]+=1\n            d1[tuple(l1)].append(s)\n        return d1.values()",
